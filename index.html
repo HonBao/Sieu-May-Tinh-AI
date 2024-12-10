@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siêu Máy Tính AI ( Người Lập Trình: Hon )</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 10px;
+            background-color: black; 
+            margin: 0;
+            color: #ff8c00; 
+        }
+        h1, h2 {
+            margin: 10px 0;
+        }
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center; 
+            padding: 10px 0;
+        }
+        .button {
+            font-size: 12px; 
+            padding: 5px 8px; 
+            margin: 3px; 
+            border: 1px solid #ff8c00; 
+            border-radius: 5px;
+            background-color: #495057; 
+            color: #ff8c00; 
+            transition: background-color 0.3s;
+            cursor: pointer;
+            text-decoration: none; 
+        }
+        .button:hover {
+            background-color: #6c757d; 
+        }
+        .input-container {
+            margin-top: 20px;
+        }
+        .input-field {
+            width: 80%;
+            padding: 8px;
+            border: 1px solid #ff8c00;
+            border-radius: 5px;
+            background-color: #495057;
+            color: #ff8c00;
+            font-size: 12px;
+        }
+        .ad-container {
+            margin: 20px 0; 
+            font-size: 18px; 
+            color: #FFD700; 
+        }
+        .ad-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-decoration: none; 
+            transition: transform 0.3s; 
+        }
+        .logo:hover {
+            transform: translateY(-5px); 
+        }
+        .youtube {
+            background: red; 
+            color: white; 
+        }
+        .tiktok {
+            background: black; 
+            color: white; 
+        }
+        .facebook {
+            background: #1877F2; 
+            color: white; 
+        }
+        .logo-text {
+            font-size: 16px; 
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.2; 
+        }
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background: linear-gradient(to bottom right, #0084FF, #00C6FF);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        .chat-button:hover {
+            transform: translateY(-5px);
+        }
+        #visitorCount {
+            margin-top: 20px;
+            font-size: 14px; /* Kích thước chữ nhỏ hơn */
+            color: purple; /* Màu tím */
+            position: absolute; /* Đặt ở cuối trang */
+            bottom: 10px; /* Cách đáy trang */
+            left: 50%; /* Căn giữa */
+            transform: translateX(-50%); /* Căn giữa */
+        }
+        /* Popup style */
+        .popup {
+            display: none; /* Ẩn popup mặc định */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black; /* Màu nền đen */
+            color: white; /* Màu chữ trắng */
+            border: 1px solid #ff8c00;
+            border-radius: 10px;
+            padding: 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .popup h3 {
+            margin: 0 0 10px;
+        }
+        .popup a {
+            color: #ff0000; /* Màu đỏ tươi cho liên kết */
+            text-decoration: none; /* Bỏ gạch chân */
+        }
+        .popup a:hover {
+            text-decoration: underline; /* Gạch chân khi hover */
+        }
+        .close-button {
+            display: block;
+            margin: 10px auto 0;
+            padding: 5px 10px;
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            .button {
+                font-size: 10px; 
+                padding: 4px 6px; 
+                width: auto; 
+            }
+            #ipAddress {
+                font-size: 7px;  
+                padding: 2px 4px; 
+            }
+            .input-field {
+                font-size: 10px; 
+                padding: 6px;
+            }
+            .logo {
+                width: 60px; 
+                height: 60px;
+            }
+            .logo-text {
+                font-size: 10px; 
+                line-height: 1.2; 
+            }
+            .chat-button {
+                padding: 10px 16px;
+                font-size: 12px;
+            }
+            #visitorCount {
+                font-size: 12px; /* Kích thước chữ nhỏ hơn trên mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Siêu Máy Tính AI</h1>
+    <h2>Công Nghệ AI Xịn Xò Nhất</h2>
+    <div class="toolbar">
+        <a href="https://chatgpt.com/" class="button">ChatGPT</a>
+        <a href="https://baomoi.com/" class="button">Báo Mới</a>
+        <a href="https://www.binance.com/vi/markets/overview" class="button">Binance</a>
+        <a href="https://www.24h.com.vn/gia-vang-hom-nay-c425.html" class="button">Giá Vàng</a>
+        <a href="https://www.google.com/search?q=giá+đô" class="button">Giá USD</a>
+        <a href="javascript:void(0);" class="button" onclick="showGameLinks()">Game</a>
+        <a href="https://shopee.vn/" class="button">Shopee</a>
+        <a href="https://www.lazada.vn/" class="button">Lazada</a>
+        <a href="https://www.facebook.com/" class="button">Facebook</a>
+        <a href="https://www.tiktok.com/" class="button">TikTok</a>
+        <a href="https://ohaytv.my/" class="button">Xem Phim</a>
+        <a href="https://animevietsub.cx/" class="button">Anime</a>
+        <a href="https://www.google.com/search?q=dịch" class="button">Dịch</a>
+        <a href="https://www.petrolimex.com.vn/" class="button">Giá Xăng</a>
+        <a href="https://online.mmvietnam.com/trung-tam/mm-an-phu/" class="button">Siêu Thị</a>
+        <a href="https://cellphones.com.vn/" class="button">Giá ĐT</a>
+        <a href="https://drive.google.com/drive/my-drive" class="button">Google Drive</a>                      
+    </div>
+
+    <div class="input-container">
+        <input type="text" id="userInput" class="input-field" placeholder="Nhập từ khóa tìm kiếm..." onkeypress="handleKeyPress(event)">
+    </div>
+
+    <!-- Chữ Quảng Cáo -->
+    <div class="ad-container">Quảng Cáo</div>
+
+    <div class="ad-links">
+        <a href="https://www.youtube.com/@YTB_HON_CHANNEL" class="logo youtube">
+            <div class="logo-text">YouTube</div>
+        </a>
+        <a href="https://www.tiktok.com/@31271860505vinh?_t=8rdXgxpXA4W&_r=1" class="logo tiktok">
+            <div class="logo-text">TikTok</div>
+        </a>
+        <a href="https://www.facebook.com/share/p/1BiXAbrGYr/" class="logo facebook">
+            <div class="logo-text">Facebook</div>
+        </a>
+    </div>
+
+    <!-- Nút Chat -->
+    <a href="javascript:void(0);" class="chat-button" onclick="openMessenger()">
+        Chat
+    </a>
+
+    <!-- Số Người Truy Cập -->
+    <div id="visitorCount">Số Người Truy Cập Trang: <span id="count">1.000.000</span></div>
+
+    <!-- Popup cho Game Links -->
+    <div id="gamePopup" class="popup">
+        <h3>Liên Kết Game</h3>
+        <ul>
+            <li><a href="https://game.chronodivide.com/" target="_blank">Red Alert 2</a></li>
+            <li><a href="https://vltkh5.zing.vn/" target="_blank">VLTK H5</a></li>
+            <li><a href="https://tienkiem.cmn.vn/landing-page-01?utm_code=200&gad_source=1&gclid=CjwKCAiAl4a6BhBqEiwAqvrqupg_6ijkafzkhY6mcO0iYGkA6dvIIbCQmFxywa5D1oss-ICYHZRX6hoCQzMQAvD_BwE" target="_blank">Tiên Kiếm</a></li>
+            <li><a href="https://id.yugih5.com/?" target="_blank">Yugi H5</a></li>
+            <li><a href="https://kyvuong.mobi/" target="_blank">Cờ Tướng</a></li>
+            <li><a href="https://kiemvu.cmn.vn/play-s248" target="_blank">Kiếm Vũ</a></li>
+            <li><a href="https://chientamquoc.cmn.vn/play-s178" target="_blank">Chiến Tam Quốc</a></li>
+            <li><a href="https://cabalemperor.com/" target="_blank">Cabal Lậu</a></li>
+            <li><a href="https://www.youtube.com/watch?v=8b9eg_DgUK4&t=56s" target="_blank">Cabal Ep8</a></li>
+            <!-- Thêm liên kết game của bạn tại đây -->
+        </ul>
+        <button class="close-button" onclick="closeGamePopup()">Đóng</button>
+    </div>
+
+    <script>       
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                searchGoogle();
+            }
+        }
+
+        function searchGoogle() {
+            const userInput = document.getElementById('userInput').value;
+            if (userInput.trim() !== '') {
+                const query = encodeURIComponent(userInput);
+                window.open(`https://www.google.com/search?q=${query}`, '_blank');
+            } else {
+                alert('Vui lòng nhập từ khóa tìm kiếm!');
+            }
+        }
+
+        // Hàm mở Messenger Facebook
+        function openMessenger() {
+            const fbMessengerUrl = `https://m.me/gaara.shi/`;
+            window.open(fbMessengerUrl, '_blank');
+        }
+
+        // Hiện popup với liên kết game
+        function showGameLinks() {
+            document.getElementById('gamePopup').style.display = 'block';
+        }
+
+        // Đóng popup
+        function closeGamePopup() {
+            document.getElementById('gamePopup').style.display = 'none';
+        }
+
+        // Cập nhật số người truy cập
+        let currentCount = 1000000;
+
+        function updateVisitorCount() {
+            const change = Math.floor(Math.random() * 10) - 5; // Thay đổi từ -5 đến 4
+            currentCount += change;
+            document.getElementById('count').innerText = currentCount.toLocaleString();
+        }
+
+        setInterval(updateVisitorCount, 1000); // Cập nhật mỗi giây
+    </script>
+</body>
+</html>
